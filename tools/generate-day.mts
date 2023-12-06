@@ -1,14 +1,13 @@
 import { writeFileSync, readFileSync, mkdirSync, existsSync } from 'node:fs';
-import yargs from 'yargs';
-import { hideBin } from 'yargs/helpers';
 import { resolve } from 'node:path';
 
-const argv = yargs(hideBin(process.argv)).argv;
-const paddedDay = +argv['day'] < 10 ? `0${argv['day']}` : argv['day'];
+const dayArg = process.argv[2];
 
-if (!argv['day'] || isNaN(+argv['day'])) {
+if (!dayArg || isNaN(+dayArg)) {
   throw new Error('Please provide option for day');
 }
+
+const paddedDay = +dayArg < 10 ? `0${dayArg}` : dayArg;
 
 const getSample = async (day) => {
   const response = await fetch(
@@ -31,6 +30,7 @@ if (!existsSync(`src/data/${paddedDay}`)) {
   mkdirSync(`src/data/${paddedDay}`);
 
   const template = readFileSync('src/template.ts');
+
   writeFileSync(
     resolve(`src/${paddedDay}.ts`),
     template.toString().replace(/<%day%>/g, paddedDay)
@@ -39,4 +39,4 @@ if (!existsSync(`src/data/${paddedDay}`)) {
   throw new Error('Folder for this day already exists!');
 }
 
-getSample(argv['day']);
+getSample(dayArg);
