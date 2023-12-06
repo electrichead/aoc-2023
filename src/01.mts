@@ -1,8 +1,8 @@
 import { map, reduce } from 'rxjs';
-import { FileTypes, readFile } from './util/read-puzzle';
+import { FileTypes, readFile } from './util/read-puzzle.mts';
 
-// const lines = readFile(FileTypes.sample);
-const lines = readFile(FileTypes.sample2);
+// const lines = readFile('01', FileTypes.sample);
+const lines = readFile('01', FileTypes.sample2);
 
 const textualNums = [
   'zero',

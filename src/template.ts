@@ -1,4 +1,4 @@
-import { FileTypes, readFileToArray } from './util/read-puzzle';
+import { FileTypes, readFileToArray } from './util/read-puzzle.mts';
 
 async function part1(lines: string[]) {}
 async function part2(lines: string[]) {}

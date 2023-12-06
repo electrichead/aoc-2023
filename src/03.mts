@@ -1,4 +1,4 @@
-import { FileTypes, readFileToArray } from './util/read-puzzle';
+import { FileTypes, readFileToArray } from './util/read-puzzle.mts';
 
 type Cell = {
   val: string;

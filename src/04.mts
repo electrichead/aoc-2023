@@ -1,5 +1,5 @@
 import { from, map, scan } from 'rxjs';
-import { FileTypes, readFileToArray } from './util/read-puzzle';
+import { FileTypes, readFileToArray } from './util/read-puzzle.mts';
 
 // const lines = readFileToArray('04', FileTypes.sample);
 const lines = readFileToArray('04', FileTypes.sample2);
