@@ -1,5 +1,7 @@
-import { zip } from 'lodash';
-import { FileTypes, readFileToArray } from './util/read-puzzle';
+import _ from 'lodash';
+import { FileTypes, readFileToArray } from './util/read-puzzle.mts';
+
+const { zip } = _;
 
 function parseLines(lines: string[]) {
   const time = lines[0]

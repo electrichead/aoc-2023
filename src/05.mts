@@ -1,5 +1,5 @@
 import { concatMap, from, generate, last, map, pairwise, scan } from 'rxjs';
-import { FileTypes, readFileToArray } from './util/read-puzzle';
+import { FileTypes, readFileToArray } from './util/read-puzzle.mts';
 import { memoize } from 'lodash';
 
 // const linesFromPuzzle = readFileToArray('05', FileTypes.sample);
