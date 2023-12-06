@@ -23,6 +23,7 @@ const getSample = async (day) => {
 
   const text = await response.text();
 
+  writeFileSync(resolve(`src/data/${paddedDay}/sample.txt`), '');
   writeFileSync(resolve(`src/data/${paddedDay}/sample2.txt`), text);
 };
 
