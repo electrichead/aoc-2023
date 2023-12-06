@@ -1,5 +1,6 @@
 import { writeFileSync, readFileSync, mkdirSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
+import open from 'open';
 
 const dayArg = process.argv[2];
 
@@ -41,3 +42,5 @@ if (!existsSync(`src/data/${paddedDay}`)) {
 }
 
 getSample(dayArg);
+
+await open(`https://adventofcode.com/2023/day/${dayArg}`);
