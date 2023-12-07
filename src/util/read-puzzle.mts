@@ -9,10 +9,12 @@ export const enum FileTypes {
 
 export const readFile = (num: string, type: FileTypes) => {
   const fileBuf = readFileSync(`src/data/${num}/${type}.txt`, 'utf-8');
-  return from(fileBuf.toString().split('\n').slice(0, -1));
+  const lines = fileBuf.toString().split('\n');
+  return from(lines.slice(0, lines.at(-1).length === 0 ? -1 : lines.length));
 };
 
 export const readFileToArray = (num: string, type: FileTypes) => {
   const fileBuf = readFileSync(`src/data/${num}/${type}.txt`, 'utf-8');
-  return fileBuf.toString().split('\n').slice(0, -1);
+  const lines = fileBuf.toString().split('\n');
+  return lines.slice(0, lines.at(-1).length === 0 ? -1 : lines.length);
 };
