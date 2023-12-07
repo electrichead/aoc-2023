@@ -31,10 +31,10 @@ const getSample = async (day) => {
 if (!existsSync(`src/data/${paddedDay}`)) {
   mkdirSync(`src/data/${paddedDay}`);
 
-  const template = readFileSync('src/template.ts');
+  const template = readFileSync('src/template.mts');
 
   writeFileSync(
-    resolve(`src/${paddedDay}.ts`),
+    resolve(`src/${paddedDay}.mts`),
     template.toString().replace(/<%day%>/g, paddedDay)
   );
 } else {
