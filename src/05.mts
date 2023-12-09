@@ -84,7 +84,7 @@ function part1(lines: string[]) {
     Number.MAX_SAFE_INTEGER
   );
 
-  // console.log(sortedResults);
+  console.log(sortedResults);
 }
 
 function getSeedRanges(
@@ -166,6 +166,6 @@ async function part2(lines: string[]) {
 }
 
 (async function () {
-  // part1(linesFromPuzzle);
-  await part2(linesFromPuzzle);
+  part1(linesFromPuzzle);
+  // await part2(linesFromPuzzle);
 })();
